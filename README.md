@@ -18,7 +18,65 @@ Quando a IA responde, o agente qualifica o lead, coleta dados importantes e reto
 
 ## Etapas do workflow
 
-As imagens detalhadas de cada bloco podem ser adicionadas em `docs/images/` e referenciadas nesta secao.
+### 1. Entrada WhatsApp
+
+Recebe mensagens do cliente via Z-API e prepara os dados iniciais.
+
+![Entrada WhatsApp](docs/images/01-entrada-whatsapp.png)
+
+### 2. Tratamento da mensagem
+
+Identifica texto, audio ou imagem, baixa midias quando necessario e padroniza a mensagem para o agente.
+
+![Tratamento da mensagem](docs/images/02-tratamento-mensagem.png)
+
+### 3. Controle IA x humano
+
+Consulta o controle de atendimento para evitar que a IA responda enquanto o vendedor esta conduzindo a conversa.
+
+![Controle IA x humano](docs/images/03-controle-ia-humano.png)
+
+### 4. Agente IA Moldform
+
+Atende o cliente, identifica a intencao, coleta dados e gera resposta estruturada.
+
+![Agente IA Moldform](docs/images/04-agente-ia-moldform.png)
+
+### 5. Converter resposta do agente
+
+Transforma o JSON retornado pelo agente em campos separados para uso nas proximas etapas.
+
+![Converter resposta do agente](docs/images/05-converter-resposta.png)
+
+### 6. Decisao: precisa humano?
+
+Decide se o fluxo apenas responde o cliente ou se deve salvar lead, atualizar controle e avisar vendedor.
+
+![Decisao precisa humano](docs/images/06-decisao-humano.png)
+
+### 7. Salvar lead qualificado
+
+Registra oportunidades qualificadas na planilha de leads.
+
+![Salvar lead qualificado](docs/images/07-salvar-lead.png)
+
+### 8. Controle de atendimento
+
+Atualiza ou cria a linha do cliente no controle de atendimento.
+
+![Controle de atendimento](docs/images/08-controle-atendimento.png)
+
+### 9. Avisar vendedor
+
+Envia um aviso pelo WhatsApp quando o lead precisa de atendimento humano.
+
+![Avisar vendedor](docs/images/09-avisar-vendedor.png)
+
+### 10. Responder cliente
+
+Envia a resposta final ao cliente via Z-API.
+
+![Responder cliente](docs/images/10-responder-cliente.png)
 
 ## Antes de importar
 
