@@ -2,10 +2,23 @@
 
 Workflow n8n para atendimento automatizado via WhatsApp, com qualificacao de leads, consulta/registro em Google Sheets e uso de modelos OpenAI.
 
+![Fluxo completo do agente de atendimento](docs/images/fluxo-completo.png)
+
 ## Conteudo
 
 - `Agente de Atendimento especialiizado.json`: export sanitizado do workflow n8n.
 - `.env.example`: lista dos valores que precisam ser configurados no ambiente/n8n.
+- `docs/images/`: imagens de documentacao do workflow.
+
+## Visao geral
+
+O fluxo recebe mensagens do WhatsApp via Z-API, identifica se o cliente enviou texto, audio ou imagem, padroniza a mensagem e consulta uma planilha de controle para decidir se a IA deve responder ou se o atendimento esta com humano.
+
+Quando a IA responde, o agente qualifica o lead, coleta dados importantes e retorna uma resposta estruturada em JSON. Se o caso precisar de atendimento humano, o workflow registra a oportunidade no Google Sheets, atualiza o controle e avisa o vendedor.
+
+## Etapas do workflow
+
+As imagens detalhadas de cada bloco podem ser adicionadas em `docs/images/` e referenciadas nesta secao.
 
 ## Antes de importar
 
